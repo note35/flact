@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.3.2/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Module CSS -->
+  <link rel="stylesheet" href="/static/css/{{jsx_path}}.css">
+  <!-- Common JSX component -->
+  {% for component in common_components %}
+  <script type="text/babel" src="/static/js/Common/{{component}}.jsx"></script>
+  {% endfor %}
+  <!-- Module JSX component -->
+  {% for component in components %}
+  <script type="text/babel" src="/static/js/{{jsx_path}}/{{component}}.jsx"></script>
+  {% endfor %}
+</head>
+<body>
+  <div id="index"></div>
+  <!-- Initiate React page -->
+  <script type="text/babel" src="/static/js/{{jsx_path}}/Index.jsx"></script>
+</body>
+</html>
+<!--
+vi: set tabstop=2 shiftwidth=2 textwidth=78 filetype=xml expandtab:
+-->
